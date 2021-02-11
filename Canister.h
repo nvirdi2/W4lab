@@ -29,7 +29,7 @@ namespace sdds {
       Canister& pour(double quantity);
       Canister& pour(Canister&);
       double volume()const;
-      std::ostream& display()const;  //!
+      std::ostream& display()const;
       double capacity()const;
       void clear();
    };

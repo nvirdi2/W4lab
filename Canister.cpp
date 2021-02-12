@@ -85,7 +85,8 @@ namespace sdds
 
         else
         {
-            pour(C.volume());
+            C = pour(C.m_contentVolume);
+            //pour(C.volume());
             C.m_contentVolume = 0.0;
         } return *this;
     }
@@ -122,9 +123,11 @@ namespace sdds
     void Canister::setToDefault()
     {
         m_contentName = nullptr;
+        
         m_diameter = 10.0;
         m_hieght = 13.0;
-        m_contentVolume = 0.0;    
+        m_contentVolume = 0.0; 
+        
         m_usable = true;      
     }
 
@@ -165,9 +168,12 @@ namespace sdds
         if (Cstr != nullptr && m_usable == true)
         {
             delete[] m_contentName;
+            
             int i;
             i = strLen(Cstr);
+            
             m_contentName = new char[i + 1];
+            
             strCpy(m_contentName, Cstr);
         }
     }
@@ -194,8 +200,10 @@ namespace sdds
                 && diameter <= 30)
         {
             setToDefault();
+            
             m_hieght = hieght;
-            m_diameter = diameter;       
+            m_diameter = diameter;   
+            
             setName(contentName);
         }
 

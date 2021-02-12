@@ -51,6 +51,7 @@ namespace sdds
         {
             setName(contentName);
         }
+        
         else if(strCmp(m_contentName, contentName) != 0)
         {
             m_usable = false;
@@ -86,7 +87,6 @@ namespace sdds
         else
         {
             C = pour(C.m_contentVolume);
-            //pour(C.volume());
             C.m_contentVolume = 0.0;
         } return *this;
     }
